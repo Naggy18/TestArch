@@ -1,4 +1,7 @@
+package TestCases;
+
 import org.openqa.selenium.WebDriver;
+import webdriver_factory.objectPool;
 
 public class testObjectPool {
     public testObjectPool() {
@@ -8,6 +11,7 @@ public class testObjectPool {
      pool = new objectPool();
      test1();
      test2();
+     pool.quitDriver();
     }
 
     public static void test1(){
@@ -20,7 +24,7 @@ public class testObjectPool {
         WebDriver driver = pool.getDriver();
         driver.get("https://github.com/");
         pool.releaseDriver(driver);
-        pool.quitDriver();
+
     }
 
 }
